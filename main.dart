@@ -104,5 +104,3 @@ class Todo {
     print('\x1B[34m Description : $description \x1B[0m');
   }
 }
-
-enum Status { Done, Pending }
