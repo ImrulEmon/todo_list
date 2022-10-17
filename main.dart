@@ -48,8 +48,8 @@ void main() {
         print('\x1B[34m \t No info to Show.Add task. \x1B[0m');
       } else {
         stdout.write("Input Task ID : ");
-
         dlt = int.parse(stdin.readLineSync()!);
+
         if (dlt > todos.length || dlt.runtimeType != int) {
           print('\x1B[31m Task id $dlt invalid! \x1B[0m');
         } else {
@@ -66,15 +66,17 @@ void main() {
         int update = 0;
 
         stdout.write("Update status of Task ID : ");
+        update = int.parse(stdin.readLineSync()!);
 
         if (update > todos.length || update.runtimeType != int) {
           print('\x1B[31m Task id $update invalid! \x1B[0m');
         } else {
-          update = int.parse(stdin.readLineSync()!);
           var updateTodo = todos.elementAt(update - 1);
-          updateTodo.showOutput();
+
           todos[update - 1].isDone = true;
           print('\x1B[32m Updated! \x1B[0m');
+
+          updateTodo.showOutput();
         }
       }
     } else {
